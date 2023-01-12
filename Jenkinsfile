@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-      PROJECT_NAME = "Neptun"
-      OWNER_NAME   = "Denis Astahov"
+      PROJECT_NAME = "Jenkins multibranch pipeline "
+      OWNER_NAME   = "Nemo"
     }
 
     stages {
