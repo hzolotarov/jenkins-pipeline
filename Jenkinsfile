@@ -28,6 +28,11 @@ print("done")'''
         }
         stage('2-Test') {
             steps {
+                when {
+                    expression {
+                       BRANCH_NAME == 'master' 
+                    }
+                }
                 echo "Start of Stage Test..."
                 echo "Testing......."
                 echo "Privet ${PROJECT_NAME}"
