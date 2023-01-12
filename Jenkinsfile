@@ -16,12 +16,11 @@ pipeline {
         stage('1.5-Build') {
             steps {
                 echo "lets play in python"
-                sh '''
-#!/usr/bin/python3
-
-for i in range(1,3):
-    print("i = " + str(i))
-print("done")
+                sh '''#!/usr/bin/python3
+                      
+                      for i in range(1,3):
+                          print("i = " + str(i))
+                      print("done")
                 '''
                 echo "End of Stage Build..."
             }
