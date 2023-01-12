@@ -51,4 +51,15 @@ print("done")'''
             }
         }	
     }
+    post {
+        always {
+            echo "always post"
+        }
+        success {
+            echo "success post"
+        }
+        failure {
+            echo "failure post"
+        }
+    }
 }
