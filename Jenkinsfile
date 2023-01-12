@@ -3,6 +3,7 @@ pipeline {
     environment {
       PROJECT_NAME = "Jenkins multibranch pipeline "
       OWNER_NAME   = "Nemo"
+      CURENT_VERSION = "0.0.1"
     }
 
     stages {
@@ -37,6 +38,8 @@ print("done")'''
                 echo "Testing......."
                 echo "Privet ${PROJECT_NAME}"
                 echo "Owner is ${OWNER_NAME}"
+                echo "Version \" ${CURENT_VERSION}"
+                echo 'Version \' ${CURENT_VERSION}'
                 echo "End of Stage Build..."
             }
         }
