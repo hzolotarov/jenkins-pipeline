@@ -25,6 +25,7 @@ print("done")'''
                 echo "End of Stage Build..."
             }
         }
+
         stage('2-Test') {
             when {
                 expression {
