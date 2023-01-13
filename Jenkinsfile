@@ -47,11 +47,11 @@ print("done")'''
             steps {
                 echo "Start of Stage Deploy..."
                 echo "Deploying......."
-                sh "ls -la"
-                sh '''
-                   echo "Line1"
-                   echo "Line2"
-                '''
+                withCredentials([
+                    usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
+                ]) {
+                    sh "echo \"Creds are: USER = ${USER} PWD = ${PWD}\""
+                }
                 echo "End of Stage Build..."
             }
         }
