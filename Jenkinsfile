@@ -50,9 +50,9 @@ print("done")'''
                 //withCredentials([usernamePassword(credentialsId: 'amazon', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 
                 withCredentials([
-                    usernamePassword(credentialsId: '154cec6d-0282-4194-9313-cd4a65e6d20c', usernameVariable: USER, passwordVariable: PWD)
+                    usernamePassword(credentialsId: '154cec6d-0282-4194-9313-cd4a65e6d20c', usernameVariable: USER, passwordVariable: PASSWD)
                 ]) {
-                    sh "echo \"Creds are: USER = ${USER} PWD = ${PWD}\""
+                    sh "echo \"Creds are: USER = ${USER} PWD = ${PASSWD}\""
                 }
                 echo "End of Stage Build..."
             }
