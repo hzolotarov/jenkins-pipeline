@@ -4,6 +4,7 @@ pipeline {
       PROJECT_NAME = "Jenkins multibranch pipeline "
       OWNER_NAME   = "Nemo"
       CURENT_VERSION = "0.0.1"
+      CREDZ=credentials('154cec6d-0282-4194-9313-cd4a65e6d20c')
     }
 
     stages {
@@ -47,13 +48,17 @@ print("done")'''
             steps {
                 echo "Start of Stage Deploy..."
                 echo "Deploying......."
-                //withCredentials([usernamePassword(credentialsId: 'amazon', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                echo "credz = ${CREDZ}"
+                sh "echo "credz = ${CREDZ}"
 
+                //withCredentials([usernamePassword(credentialsId: 'amazon', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+/*
                 withCredentials([
                     usernamePassword(credentialsId: '154cec6d-0282-4194-9313-cd4a65e6d20c', usernameVariable: USER, passwordVariable: PASSWD)
                 ]) {
-                    sh "echo \"Creds are: USER = ${USER} PWD = ${PASSWD}\""
+                    sh "echo \"Creds are: USER = ${USER} PASSWD = ${PASSWD}\""
                 }
+*/
                 echo "End of Stage Build..."
             }
         }
