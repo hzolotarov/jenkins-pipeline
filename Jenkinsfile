@@ -47,8 +47,10 @@ print("done")'''
             steps {
                 echo "Start of Stage Deploy..."
                 echo "Deploying......."
+                //withCredentials([usernamePassword(credentialsId: 'amazon', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+
                 withCredentials([
-                    usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
+                    usernamePassword(credentialsId: '154cec6d-0282-4194-9313-cd4a65e6d20c', usernameVariable: USER, passwordVariable: PWD)
                 ]) {
                     sh "echo \"Creds are: USER = ${USER} PWD = ${PWD}\""
                 }
