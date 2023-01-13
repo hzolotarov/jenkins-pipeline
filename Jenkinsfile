@@ -49,7 +49,7 @@ print("done")'''
                 echo "Start of Stage Deploy..."
                 echo "Deploying......."
                 echo "credz = ${CREDZ}"
-                sh "echo "credz = ${CREDZ}"
+                sh "echo \"credz = ${CREDZ}\""
 
                 //withCredentials([usernamePassword(credentialsId: 'amazon', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 /*
